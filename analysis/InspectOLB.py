@@ -8,6 +8,7 @@ InspectOLB class
 from datetime import datetime
 from prettytable import PrettyTable
 import config.Settings as Settings
+import pandas as pd
 
 settings = Settings.Settings()
 
@@ -17,12 +18,21 @@ class InspectOLB:
         self.df = df
         self.start_date = settings.get_start_date()
         self.end_date = settings.get_end_date()
+        self.clean_data()
 
         self.tests = {
             'FATAL: Date out of Range': self.check_date,
             'FATAL: Missing Customer ID': self.check_olb_id,
             'FATAL: Missing Target ID': self.check_core_customer_id
         }
+
+    def clean_data(self):
+        # remove the whitespace from the column names
+        self.df.columns = self.df.columns.str.strip()
+        # remove the whitespace from the data
+        self.df = self.df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+        # convert the date column to datetime
+        self.df['Date/Time'] = pd.to_datetime(self.df['Date/Time'], format='%Y-%m-%d %H:%M:%S')
 
     def check_date(self):
         begin = datetime.strptime(self.start_date, '%Y-%m-%d')
@@ -47,3 +57,5 @@ class InspectOLB:
             issues_found = test_func()
             table.add_row([test_name, issues_found])
         return table
+
+
