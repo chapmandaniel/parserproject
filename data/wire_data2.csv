@@ -1,0 +1,8 @@
+Date/Time | OLB User ID | Core Customer ID | Mapping Type | Session ID | IP Address | User Agent String | Device ID |Action/Service | Payee/Destination | Transaction Amount| Success Status | Description | Source Account
+2016-03-31 12:59:05 | abby.bungay | 123456789 | TIN | aaaaa111111 | 198.162.1.1 | Mozilla/5.0 || SUBMIT_USERNAME_PASSWORD | | | SUCCESS | john.doe55 logged in |
+2011-03-31 12:59:39 | carter.david | 987654321 | TIN | b222222222 | 198.162.1.1 | Mozilla/5.0 || REMOTE_DEPOSIT_CHEQUE | Acct 1234567| 500.00 | SUCCESS |Mobile deposit: Check number 7777| 1245S01
+2013-03-31 13:01:02 | | 120934874 | TIN | c3333333333 | 198.162.1.1 | Mozilla/5.0 |23j5b8| ADD_PAYEE | Light and Power| | SUCCESS | Payee added|
+2015-03-31 13:01:02 | gary.harris | 222222222 | TIN | d4444444444 | 1.2.3.4 | Mozilla/5.0 || SUBMIT_USERNAME_PASSWORD | | | FAILURE | Bad password|
+2016-03-31 13:02:42 || 444444444 | TIN | e5555555555 | 198.162.1.1 | Mozilla/5.0 |x3zy-5672-sgdf| INITIATE_RECURRING_BILL_PAY | Light and Power|1500.00 | SUCCESS | Recurring payment |
+2010-03-31 13:01:35 | kelsey.lock || TIN | f6666666666 | 1.2.3.4 | Mozilla/5.0 || START_SESSION | | | SUCCESS | User logged in via Fingerprint|
+2010-03-31 13:05:00 | mark.newman | 555555555 | TIN | g7777777777 | 198.162.1.1 | Mozilla/5.0 || ADD_EMAIL ||| SUCCESS | New address: john@me.com |
